@@ -1,0 +1,17 @@
+C:\Users\gabri\Documents\Dotnet\SPI.BackupFiles\SPI.BackupFiles\bin\Debug\net6.0-windows\SPI.BackupFiles.exe
+C:\Users\gabri\Documents\Dotnet\SPI.BackupFiles\SPI.BackupFiles\bin\Debug\net6.0-windows\SPI.BackupFiles.deps.json
+C:\Users\gabri\Documents\Dotnet\SPI.BackupFiles\SPI.BackupFiles\bin\Debug\net6.0-windows\SPI.BackupFiles.runtimeconfig.json
+C:\Users\gabri\Documents\Dotnet\SPI.BackupFiles\SPI.BackupFiles\bin\Debug\net6.0-windows\SPI.BackupFiles.dll
+C:\Users\gabri\Documents\Dotnet\SPI.BackupFiles\SPI.BackupFiles\bin\Debug\net6.0-windows\SPI.BackupFiles.pdb
+C:\Users\gabri\Documents\Dotnet\SPI.BackupFiles\SPI.BackupFiles\obj\Debug\net6.0-windows\SPI.BackupFiles.csproj.AssemblyReference.cache
+C:\Users\gabri\Documents\Dotnet\SPI.BackupFiles\SPI.BackupFiles\obj\Debug\net6.0-windows\SPI.BackupFiles.Form1.resources
+C:\Users\gabri\Documents\Dotnet\SPI.BackupFiles\SPI.BackupFiles\obj\Debug\net6.0-windows\SPI.BackupFiles.csproj.GenerateResource.cache
+C:\Users\gabri\Documents\Dotnet\SPI.BackupFiles\SPI.BackupFiles\obj\Debug\net6.0-windows\SPI.BackupFiles.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gabri\Documents\Dotnet\SPI.BackupFiles\SPI.BackupFiles\obj\Debug\net6.0-windows\SPI.BackupFiles.AssemblyInfoInputs.cache
+C:\Users\gabri\Documents\Dotnet\SPI.BackupFiles\SPI.BackupFiles\obj\Debug\net6.0-windows\SPI.BackupFiles.AssemblyInfo.cs
+C:\Users\gabri\Documents\Dotnet\SPI.BackupFiles\SPI.BackupFiles\obj\Debug\net6.0-windows\SPI.BackupFiles.csproj.CoreCompileInputs.cache
+C:\Users\gabri\Documents\Dotnet\SPI.BackupFiles\SPI.BackupFiles\obj\Debug\net6.0-windows\SPI.BackupFiles.dll
+C:\Users\gabri\Documents\Dotnet\SPI.BackupFiles\SPI.BackupFiles\obj\Debug\net6.0-windows\refint\SPI.BackupFiles.dll
+C:\Users\gabri\Documents\Dotnet\SPI.BackupFiles\SPI.BackupFiles\obj\Debug\net6.0-windows\SPI.BackupFiles.pdb
+C:\Users\gabri\Documents\Dotnet\SPI.BackupFiles\SPI.BackupFiles\obj\Debug\net6.0-windows\SPI.BackupFiles.genruntimeconfig.cache
+C:\Users\gabri\Documents\Dotnet\SPI.BackupFiles\SPI.BackupFiles\obj\Debug\net6.0-windows\ref\SPI.BackupFiles.dll
