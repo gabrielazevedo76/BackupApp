@@ -8,20 +8,32 @@ using System.Threading.Tasks;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using Microsoft.VisualBasic.ApplicationServices;
+using System.ComponentModel;
 
 namespace SPI.BackupFiles
 {
-    public static class BackupAction
+    public class BackupAction
     {
+        public static ValueHandler valueHandler = new ValueHandler();
+        public static FormProgressBar progressBarForm;
+        
+        public static int GetValueHandler()
+        {
+            return valueHandler.Value;
+        }
+
         public static void Backup(string sourcePath, string targetPath, DateTime initialDateTime, DateTime endDateTime)
         {
             try 
             {
-                string[] sourceDirectoryFiles = Directory.GetFiles(sourcePath);
+                IEnumerable<string> sourceDirectoryFiles = Directory.GetFiles(sourcePath).AsEnumerable();
 
-                IEnumerable<string> filteredFilesByDate = FilterByDate(sourceDirectoryFiles, initialDateTime, endDateTime).AsEnumerable();
+                List<string> filteredFilesByDate = FilterByDate(sourceDirectoryFiles, initialDateTime, endDateTime);
 
-                MoveFiles(filteredFilesByDate, targetPath);
+                progressBarForm = new FormProgressBar(filteredFilesByDate.Count());
+                progressBarForm.Show();
+
+                MoveFiles(filteredFilesByDate, targetPath, progressBarForm);
 
             }           
             catch (Exception e)
@@ -30,7 +42,7 @@ namespace SPI.BackupFiles
             }
         }
 
-        private static List<string> FilterByDate(string[] sourceDirectoryFiles, DateTime initialDateTime, DateTime endDateTime)
+        private static List<string> FilterByDate(IEnumerable<string> sourceDirectoryFiles, DateTime initialDateTime, DateTime endDateTime)
         {
             List<string> filesByDateRange = new List<string>();
 
@@ -45,21 +57,32 @@ namespace SPI.BackupFiles
             return filesByDateRange;
         }
 
-        private static void MoveFiles(IEnumerable<string> files, string targetPath)
+        private static void MoveFiles(List<string> files, string targetPath, FormProgressBar progressBarForm)
         {
-            foreach (var file in files)
+            for(var i = 0; i<files.Count(); i++)
             { 
-                var fileName = Path.GetFileName(file);
-                File.Copy(file, targetPath + "\\" + fileName);
+                var fileName = Path.GetFileName(files[i]);
+                File.Copy(files[i], targetPath + "\\" + fileName);
+
+                valueHandler.Value = i;
             }
         }
+
+        /*
+        public async static Task<bool> UpdateProgressBar(BackgroundWorker bgWorker, int currentValue)
+        {
+            bgWorker.ReportProgress(currentValue);
+
+            return true;
+        }
+        */
+
+
         public static DirectoryPaths? GetDirectoryPaths()
         {
             string pathAppSettings = @"C:\Users\gabri\Documents\Dotnet\SPI.BackupFiles\SPI.BackupFiles\AppSettings.json"
 ;
             DirectoryPaths? paths = JsonSerializer.Deserialize<DirectoryPaths>(File.ReadAllText(pathAppSettings));
-
-            Console.WriteLine(pathAppSettings);
 
             return paths;
         }

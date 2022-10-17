@@ -15,3 +15,4 @@ C:\Users\gabri\Documents\Dotnet\SPI.BackupFiles\SPI.BackupFiles\obj\Debug\net6.0
 C:\Users\gabri\Documents\Dotnet\SPI.BackupFiles\SPI.BackupFiles\obj\Debug\net6.0-windows\SPI.BackupFiles.pdb
 C:\Users\gabri\Documents\Dotnet\SPI.BackupFiles\SPI.BackupFiles\obj\Debug\net6.0-windows\SPI.BackupFiles.genruntimeconfig.cache
 C:\Users\gabri\Documents\Dotnet\SPI.BackupFiles\SPI.BackupFiles\obj\Debug\net6.0-windows\ref\SPI.BackupFiles.dll
+C:\Users\gabri\Documents\Dotnet\SPI.BackupFiles\SPI.BackupFiles\obj\Debug\net6.0-windows\SPI.BackupFiles.FormProgressBar.resources
