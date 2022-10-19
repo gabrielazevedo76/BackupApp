@@ -15,25 +15,17 @@ namespace SPI.BackupFiles
     public class BackupAction
     {
         public static ValueHandler valueHandler = new ValueHandler();
-        public static FormProgressBar progressBarForm;
-        
-        public static int GetValueHandler()
-        {
-            return valueHandler.Value;
-        }
 
         public static void Backup(string sourcePath, string targetPath, DateTime initialDateTime, DateTime endDateTime)
         {
+
             try 
             {
                 IEnumerable<string> sourceDirectoryFiles = Directory.GetFiles(sourcePath).AsEnumerable();
 
                 List<string> filteredFilesByDate = FilterByDate(sourceDirectoryFiles, initialDateTime, endDateTime);
 
-                progressBarForm = new FormProgressBar(filteredFilesByDate.Count());
-                progressBarForm.Show();
-
-                MoveFiles(filteredFilesByDate, targetPath, progressBarForm);
+                MoveFiles(filteredFilesByDate, targetPath);
 
             }           
             catch (Exception e)
@@ -46,18 +38,20 @@ namespace SPI.BackupFiles
         {
             List<string> filesByDateRange = new List<string>();
 
+            //TODO exception para caso não tenho nenhum item
+
             foreach(var file in sourceDirectoryFiles)
             {
                 var currentFile = File.GetCreationTime(file);
 
-                if(currentFile.Date > initialDateTime.Date && currentFile.Date < endDateTime.Date)
+                if(currentFile.Date >= initialDateTime.Date && currentFile.Date <= endDateTime.Date)
                     filesByDateRange.Add(file);
             }
 
             return filesByDateRange;
         }
 
-        private static void MoveFiles(List<string> files, string targetPath, FormProgressBar progressBarForm)
+        private static void MoveFiles(List<string> files, string targetPath)
         {
             for(var i = 0; i<files.Count(); i++)
             { 
@@ -67,16 +61,6 @@ namespace SPI.BackupFiles
                 valueHandler.Value = i;
             }
         }
-
-        /*
-        public async static Task<bool> UpdateProgressBar(BackgroundWorker bgWorker, int currentValue)
-        {
-            bgWorker.ReportProgress(currentValue);
-
-            return true;
-        }
-        */
-
 
         public static DirectoryPaths? GetDirectoryPaths()
         {

@@ -38,6 +38,7 @@
             this.dateTimeEnd = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // sourcePathBtn
@@ -78,7 +79,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(180, 365);
+            this.button3.Location = new System.Drawing.Point(202, 371);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(111, 47);
             this.button3.TabIndex = 4;
@@ -123,9 +124,20 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "Data Fim";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(202, 66);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.ClientSize = new System.Drawing.Size(486, 440);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dateTimeEnd);
@@ -154,5 +166,6 @@
         private DateTimePicker dateTimeEnd;
         private Label label1;
         private Label label2;
+        private Button button1;
     }
 }
