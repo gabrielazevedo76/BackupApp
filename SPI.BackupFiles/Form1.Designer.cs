@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.sourcePathBtn = new System.Windows.Forms.Button();
             this.sourcePathTextBox = new System.Windows.Forms.TextBox();
             this.targetPathTextBox = new System.Windows.Forms.TextBox();
@@ -38,12 +39,15 @@
             this.dateTimeEnd = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // sourcePathBtn
             // 
-            this.sourcePathBtn.Location = new System.Drawing.Point(64, 142);
+            this.sourcePathBtn.Location = new System.Drawing.Point(65, 140);
             this.sourcePathBtn.Name = "sourcePathBtn";
             this.sourcePathBtn.Size = new System.Drawing.Size(84, 23);
             this.sourcePathBtn.TabIndex = 0;
@@ -53,7 +57,7 @@
             // 
             // sourcePathTextBox
             // 
-            this.sourcePathTextBox.Location = new System.Drawing.Point(154, 142);
+            this.sourcePathTextBox.Location = new System.Drawing.Point(155, 140);
             this.sourcePathTextBox.Name = "sourcePathTextBox";
             this.sourcePathTextBox.Size = new System.Drawing.Size(258, 23);
             this.sourcePathTextBox.TabIndex = 1;
@@ -61,7 +65,7 @@
             // 
             // targetPathTextBox
             // 
-            this.targetPathTextBox.Location = new System.Drawing.Point(154, 185);
+            this.targetPathTextBox.Location = new System.Drawing.Point(155, 183);
             this.targetPathTextBox.Name = "targetPathTextBox";
             this.targetPathTextBox.Size = new System.Drawing.Size(258, 23);
             this.targetPathTextBox.TabIndex = 3;
@@ -69,7 +73,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(64, 185);
+            this.button2.Location = new System.Drawing.Point(65, 183);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(84, 23);
             this.button2.TabIndex = 2;
@@ -79,7 +83,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(202, 371);
+            this.button3.Location = new System.Drawing.Point(190, 353);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(111, 47);
             this.button3.TabIndex = 4;
@@ -89,7 +93,7 @@
             // 
             // dateTimeInitial
             // 
-            this.dateTimeInitial.Location = new System.Drawing.Point(154, 231);
+            this.dateTimeInitial.Location = new System.Drawing.Point(155, 229);
             this.dateTimeInitial.Name = "dateTimeInitial";
             this.dateTimeInitial.Size = new System.Drawing.Size(258, 23);
             this.dateTimeInitial.TabIndex = 5;
@@ -97,7 +101,7 @@
             // 
             // dateTimeEnd
             // 
-            this.dateTimeEnd.Location = new System.Drawing.Point(154, 274);
+            this.dateTimeEnd.Location = new System.Drawing.Point(155, 272);
             this.dateTimeEnd.Name = "dateTimeEnd";
             this.dateTimeEnd.Size = new System.Drawing.Size(258, 23);
             this.dateTimeEnd.TabIndex = 6;
@@ -107,7 +111,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(75, 231);
+            this.label1.Location = new System.Drawing.Point(76, 229);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 15);
             this.label1.TabIndex = 7;
@@ -118,26 +122,40 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(75, 274);
+            this.label2.Location = new System.Drawing.Point(76, 272);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 15);
             this.label2.TabIndex = 8;
             this.label2.Text = "Data Fim";
             // 
-            // button1
+            // pictureBox1
             // 
-            this.button1.Location = new System.Drawing.Point(202, 66);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(12, -20);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(182, 135);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(307, 12);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(167, 72);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 10;
+            this.pictureBox2.TabStop = false;
             // 
             // Form1
             // 
             this.ClientSize = new System.Drawing.Size(486, 440);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dateTimeEnd);
@@ -149,6 +167,8 @@
             this.Controls.Add(this.sourcePathBtn);
             this.Name = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -166,6 +186,7 @@
         private DateTimePicker dateTimeEnd;
         private Label label1;
         private Label label2;
-        private Button button1;
+        private PictureBox pictureBox1;
+        private PictureBox pictureBox2;
     }
 }

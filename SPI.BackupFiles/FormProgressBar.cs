@@ -92,6 +92,7 @@ namespace SPI.BackupFiles
 
         private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
+            Thread.Sleep(200);
             this.Close();
         }
     }

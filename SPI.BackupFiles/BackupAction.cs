@@ -14,8 +14,6 @@ namespace SPI.BackupFiles
 {
     public class BackupAction
     {
-        public static ValueHandler valueHandler = new ValueHandler();
-
         public static void Backup(string sourcePath, string targetPath, DateTime initialDateTime, DateTime endDateTime)
         {
 
@@ -58,13 +56,12 @@ namespace SPI.BackupFiles
                 var fileName = Path.GetFileName(files[i]);
                 File.Copy(files[i], targetPath + "\\" + fileName);
 
-                valueHandler.Value = i;
             }
         }
 
         public static DirectoryPaths? GetDirectoryPaths()
         {
-            string pathAppSettings = @"C:\Users\gabri\Documents\Dotnet\SPI.BackupFiles\SPI.BackupFiles\AppSettings.json"
+            string pathAppSettings = @"C:\projetos\BackupApp\SPI.BackupFiles\AppSettings.json"
 ;
             DirectoryPaths? paths = JsonSerializer.Deserialize<DirectoryPaths>(File.ReadAllText(pathAppSettings));
 
