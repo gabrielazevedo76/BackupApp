@@ -7,6 +7,7 @@ using System.Data;
 using System.Diagnostics.Tracing;
 using System.Drawing;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -35,24 +36,39 @@ namespace SPI.BackupFiles
 
         private void FormProgressBar_Load(object sender, EventArgs e)
         {
-            (int countedFiles, filesByDate) = CountFiles(_sourcePathTextBox, _dateTimeInitial, _dateTimeEnd);
+                (int countedFiles, filesByDate) = CountFiles(_sourcePathTextBox, _dateTimeInitial, _dateTimeEnd);
 
-            //ProgressBar1 Config
-            progressBar1.Minimum = 0;
-            progressBar1.Maximum = countedFiles;
-            progressBar1.Step = 1;
+                //ProgressBar1 Config
+                progressBar1.Minimum = 0;
+                progressBar1.Maximum = countedFiles;
+                progressBar1.Step = 1;
 
-            backgroundWorker1.RunWorkerAsync();
+                backgroundWorker1.RunWorkerAsync();
+            
         }
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-            for(var i = 0; i<filesByDate?.Count(); i++)
-            { 
-                var fileName = Path.GetFileName(filesByDate[i]);
-                File.Copy(filesByDate[i], _targetPathTextBox + "\\" + fileName);
+            try
+            {
+                for(var i = 0; i<filesByDate?.Count(); i++)
+                { 
+                    var fileName = Path.GetFileName(filesByDate[i]);
+                    File.Copy(filesByDate[i], _targetPathTextBox + "\\" + fileName);
 
-                backgroundWorker1.ReportProgress(i);
+                    backgroundWorker1.ReportProgress(i);
+                }
+            }
+            catch(Exception ex)
+            {
+                if(ex is UnauthorizedAccessException)
+                {
+                    MessageBox.Show("Acesso não autorizado!");
+                }
+                else
+                {
+                    MessageBox.Show("Ocorreu um Erro. Tente Novamente!");
+                }
             }
         }
 
@@ -65,12 +81,33 @@ namespace SPI.BackupFiles
 
         private (int, List<string>) CountFiles(string sourceDirectory, DateTime dateTimeInitial, DateTime dateTimeEnd)
         {
-            IEnumerable<string> sourceDirectoryFiles = Directory.GetFiles(sourceDirectory).AsEnumerable();
+            try
+            {
+                IEnumerable<string> sourceDirectoryFiles = Directory.GetFiles(sourceDirectory).AsEnumerable();
 
-            int countedFiles = FilterByDate(sourceDirectoryFiles, dateTimeInitial, dateTimeEnd).Count();
-            List<string> filterByDate = FilterByDate(sourceDirectoryFiles, dateTimeInitial, dateTimeEnd);
+                int countedFiles = FilterByDate(sourceDirectoryFiles, dateTimeInitial, dateTimeEnd).Count();
+                List<string> filterByDate = FilterByDate(sourceDirectoryFiles, dateTimeInitial, dateTimeEnd);
 
-            return (countedFiles, filterByDate);
+                return (countedFiles, filterByDate);
+
+            }
+            catch (Exception ex)
+            {
+
+                List<string> filterByDate = new List<string>();
+
+                if(ex is ArgumentException)
+                { 
+                    MessageBox.Show("É obrigatório inserir o caminho de origem!");
+                    return (0, filterByDate);
+                }
+                else
+                {
+                    MessageBox.Show("Ocorreu um Erro. Tente Novamente!");
+                    return (0, filterByDate);
+                }
+
+            }
         }
 
         private List<string> FilterByDate(IEnumerable<string> sourceDirectoryFiles, DateTime initialDateTime, DateTime endDateTime)
@@ -94,6 +131,11 @@ namespace SPI.BackupFiles
         {
             Thread.Sleep(200);
             this.Close();
+        }
+
+        private void progressBar1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

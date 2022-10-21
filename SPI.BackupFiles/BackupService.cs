@@ -12,7 +12,7 @@ using System.ComponentModel;
 
 namespace SPI.BackupFiles
 {
-    public class BackupAction
+    public class BackupService
     {
         public static void Backup(string sourcePath, string targetPath, DateTime initialDateTime, DateTime endDateTime)
         {
@@ -35,8 +35,6 @@ namespace SPI.BackupFiles
         private static List<string> FilterByDate(IEnumerable<string> sourceDirectoryFiles, DateTime initialDateTime, DateTime endDateTime)
         {
             List<string> filesByDateRange = new List<string>();
-
-            //TODO exception para caso não tenho nenhum item
 
             foreach(var file in sourceDirectoryFiles)
             {
@@ -61,7 +59,7 @@ namespace SPI.BackupFiles
 
         public static DirectoryPaths? GetDirectoryPaths()
         {
-            string pathAppSettings = @"C:\projetos\BackupApp\SPI.BackupFiles\AppSettings.json"
+            string pathAppSettings = @"C:\Users\gabri\Documents\Dotnet\SPI.BackupFiles\SPI.BackupFiles\AppSettings.json"
 ;
             DirectoryPaths? paths = JsonSerializer.Deserialize<DirectoryPaths>(File.ReadAllText(pathAppSettings));
 

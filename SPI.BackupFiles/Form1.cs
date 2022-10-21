@@ -56,7 +56,7 @@ namespace SPI.BackupFiles
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            sourcePathTextBox.Text = BackupAction.GetDirectoryPaths()?.SourcePath; 
+            sourcePathTextBox.Text = BackupService.GetDirectoryPaths()?.SourcePath; 
         }
 
         private void button1_Click(object sender, EventArgs e)
