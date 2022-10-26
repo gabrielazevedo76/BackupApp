@@ -1,0 +1,5 @@
+C:\projetos\BackupFiles\publish\SPI.BackupFiles.exe
+C:\projetos\BackupFiles\publish\SPI.BackupFiles.dll
+C:\projetos\BackupFiles\publish\SPI.BackupFiles.deps.json
+C:\projetos\BackupFiles\publish\SPI.BackupFiles.runtimeconfig.json
+C:\projetos\BackupFiles\publish\SPI.BackupFiles.pdb

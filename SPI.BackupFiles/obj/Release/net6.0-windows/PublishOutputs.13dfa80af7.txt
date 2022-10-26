@@ -1,0 +1,5 @@
+C:\projetos\BackupApp\SPI.BackupFiles\bin\Release\net6.0-windows\publish\SPI.BackupFiles.exe
+C:\projetos\BackupApp\SPI.BackupFiles\bin\Release\net6.0-windows\publish\SPI.BackupFiles.dll
+C:\projetos\BackupApp\SPI.BackupFiles\bin\Release\net6.0-windows\publish\SPI.BackupFiles.deps.json
+C:\projetos\BackupApp\SPI.BackupFiles\bin\Release\net6.0-windows\publish\SPI.BackupFiles.runtimeconfig.json
+C:\projetos\BackupApp\SPI.BackupFiles\bin\Release\net6.0-windows\publish\SPI.BackupFiles.pdb

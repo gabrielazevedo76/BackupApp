@@ -1,6 +1,6 @@
 ﻿namespace SPI.BackupFiles
 {
-    partial class Form1
+    partial class FormBackup
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormBackup));
             this.sourcePathBtn = new System.Windows.Forms.Button();
             this.sourcePathTextBox = new System.Windows.Forms.TextBox();
             this.targetPathTextBox = new System.Windows.Forms.TextBox();
@@ -41,8 +41,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.SuspendLayout();
             // 
             // sourcePathBtn
@@ -115,7 +117,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 15);
             this.label1.TabIndex = 7;
-            this.label1.Text = "Data Inicio";
+            this.label1.Text = "Data Início";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
@@ -151,6 +153,11 @@
             this.pictureBox2.TabIndex = 10;
             this.pictureBox2.TabStop = false;
             // 
+            // fileSystemWatcher1
+            // 
+            this.fileSystemWatcher1.EnableRaisingEvents = true;
+            this.fileSystemWatcher1.SynchronizingObject = this;
+            // 
             // Form1
             // 
             this.ClientSize = new System.Drawing.Size(486, 440);
@@ -165,10 +172,13 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.sourcePathTextBox);
             this.Controls.Add(this.sourcePathBtn);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
+            this.Text = "Backup";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -188,5 +198,6 @@
         private Label label2;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
+        private FileSystemWatcher fileSystemWatcher1;
     }
 }

@@ -52,15 +52,29 @@ namespace SPI.BackupFiles
             try
             {
                 for(var i = 0; i<filesByDate?.Count(); i++)
-                { 
+                {
+                    var fileDate = File.GetCreationTime(filesByDate[i]);
+                    var currentDateFolder = Directory.CreateDirectory(_targetPathTextBox + "\\" + fileDate.Day + "-" + fileDate.Month + "-" + fileDate.Year); 
                     var fileName = Path.GetFileName(filesByDate[i]);
-                    File.Copy(filesByDate[i], _targetPathTextBox + "\\" + fileName);
+                    File.Copy(filesByDate[i], currentDateFolder + "\\" + fileName);
 
                     backgroundWorker1.ReportProgress(i);
                 }
             }
             catch(Exception ex)
             {
+                if(ex.HResult == -2147024816)
+                {
+                    int wordFrom = ex.Message.IndexOf("'") + 1;
+                    int wordTo = ex.Message.LastIndexOf("'") - " ' already".Length;
+
+                    string file = ex.Message.Substring(wordFrom, wordTo);
+                    MessageBox.Show($"Arquivo {file} já existe!");
+                }
+                if(ex.HResult == -2147024891)
+                {
+                    MessageBox.Show("É obrigatório inserir o caminho de destino!");
+                }
                 if(ex is UnauthorizedAccessException)
                 {
                     MessageBox.Show("Acesso não autorizado!");
@@ -77,7 +91,11 @@ namespace SPI.BackupFiles
             progressBar1.Value = e.ProgressPercentage;
         }
 
-
+        private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            Thread.Sleep(500);
+            this.Close();
+        }
 
         private (int, List<string>) CountFiles(string sourceDirectory, DateTime dateTimeInitial, DateTime dateTimeEnd)
         {
@@ -114,8 +132,6 @@ namespace SPI.BackupFiles
         {
             List<string> filesByDateRange = new List<string>();
 
-            //TODO exception para caso não tenho nenhum item
-
             foreach(var file in sourceDirectoryFiles)
             {
                 var currentFile = File.GetCreationTime(file);
@@ -125,12 +141,6 @@ namespace SPI.BackupFiles
             }
 
             return filesByDateRange;
-        }
-
-        private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
-            Thread.Sleep(200);
-            this.Close();
         }
 
         private void progressBar1_Click(object sender, EventArgs e)

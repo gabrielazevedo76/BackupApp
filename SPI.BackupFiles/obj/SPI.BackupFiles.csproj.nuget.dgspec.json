@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\gabri\\Documents\\Dotnet\\SPI.BackupFiles\\SPI.BackupFiles\\SPI.BackupFiles.csproj": {}
+    "C:\\projetos\\BackupFiles\\SPI.BackupFiles\\SPI.BackupFiles.csproj": {}
   },
   "projects": {
-    "C:\\Users\\gabri\\Documents\\Dotnet\\SPI.BackupFiles\\SPI.BackupFiles\\SPI.BackupFiles.csproj": {
+    "C:\\projetos\\BackupFiles\\SPI.BackupFiles\\SPI.BackupFiles.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\gabri\\Documents\\Dotnet\\SPI.BackupFiles\\SPI.BackupFiles\\SPI.BackupFiles.csproj",
+        "projectUniqueName": "C:\\projetos\\BackupFiles\\SPI.BackupFiles\\SPI.BackupFiles.csproj",
         "projectName": "SPI.BackupFiles",
-        "projectPath": "C:\\Users\\gabri\\Documents\\Dotnet\\SPI.BackupFiles\\SPI.BackupFiles\\SPI.BackupFiles.csproj",
-        "packagesPath": "C:\\Users\\gabri\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\gabri\\Documents\\Dotnet\\SPI.BackupFiles\\SPI.BackupFiles\\obj\\",
+        "projectPath": "C:\\projetos\\BackupFiles\\SPI.BackupFiles\\SPI.BackupFiles.csproj",
+        "packagesPath": "C:\\Users\\gabriela\\.nuget\\packages\\",
+        "outputPath": "C:\\projetos\\BackupFiles\\SPI.BackupFiles\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\gabri\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\gabriela\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -58,7 +58,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -2,9 +2,9 @@ using System.Globalization;
 
 namespace SPI.BackupFiles
 {
-    public partial class Form1 : Form
+    public partial class FormBackup : Form
     {
-        public Form1()
+        public FormBackup()
         {
             InitializeComponent();
         }
@@ -57,6 +57,7 @@ namespace SPI.BackupFiles
         private void Form1_Load(object sender, EventArgs e)
         {
             sourcePathTextBox.Text = BackupService.GetDirectoryPaths()?.SourcePath; 
+            targetPathTextBox.Text = BackupService.GetDirectoryPaths()?.TargetPath; 
         }
 
         private void button1_Click(object sender, EventArgs e)

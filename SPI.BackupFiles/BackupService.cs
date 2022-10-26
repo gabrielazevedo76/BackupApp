@@ -59,9 +59,13 @@ namespace SPI.BackupFiles
 
         public static DirectoryPaths? GetDirectoryPaths()
         {
-            string pathAppSettings = @"C:\Users\gabri\Documents\Dotnet\SPI.BackupFiles\SPI.BackupFiles\AppSettings.json"
+
+            string currentDirectory = Directory.GetCurrentDirectory();
+
+
+            string pathConfiguration = currentDirectory + @"\Configuration.json"
 ;
-            DirectoryPaths? paths = JsonSerializer.Deserialize<DirectoryPaths>(File.ReadAllText(pathAppSettings));
+            DirectoryPaths? paths = JsonSerializer.Deserialize<DirectoryPaths>(File.ReadAllText(pathConfiguration));
 
             return paths;
         }
